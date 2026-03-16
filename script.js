@@ -4,14 +4,21 @@ if(count === null){
 count = 0;
 }
 
-document.getElementById("count").textContent = count;
+const counter = document.getElementById("count");
+counter.textContent = count;
 
 function increase(){
 
 count++;
 
-document.getElementById("count").textContent = count;
+counter.textContent = count;
 
-localStorage.setItem("counter", count);
+counter.style.transform="scale(1.3)";
+
+setTimeout(()=>{
+counter.style.transform="scale(1)";
+},150);
+
+localStorage.setItem("counter",count);
 
 }
